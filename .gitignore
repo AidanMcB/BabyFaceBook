@@ -1,0 +1,3 @@
+/BabyFaceBook-backend/tmp/*
+/BabyFaceBook-backend/log/*
+/BabyFaceBook-backend/db/development.sqlite3
