@@ -1,0 +1,102 @@
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBabies (20200512024429)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "babies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "weight" float, "dob" varchar, "img" varchar, "likes" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200512024429"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-12 02:48:13.601557"], ["updated_at", "2020-05-12 02:48:13.601557"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddGenderToBabies (20200512025636)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "babies" ADD "gender" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200512025636"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBaby Load (0.3ms)[0m  [1m[34mSELECT "babies".* FROM "babies"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBaby Load (0.1ms)[0m  [1m[34mSELECT "babies".* FROM "babies"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (1.2ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Raleigh Marquardt"], ["weight", 5.79], ["dob", "2019-06-21"], ["img", "https://robohash.org/consequaturomnissunt.png?size=300x300&set=set1"], ["likes", 86], ["created_at", "2020-05-12 03:13:22.234503"], ["updated_at", "2020-05-12 03:13:22.234503"], ["gender", "Male"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.4ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Asa Hansen II"], ["weight", 7.31], ["dob", "2019-11-27"], ["img", "https://robohash.org/iustovoluptatemet.png?size=300x300&set=set1"], ["likes", 72], ["created_at", "2020-05-12 03:13:22.239425"], ["updated_at", "2020-05-12 03:13:22.239425"], ["gender", "Female"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Trinidad Maggio"], ["weight", 6.38], ["dob", "2019-11-11"], ["img", "https://robohash.org/sedremsequi.png?size=300x300&set=set1"], ["likes", 61], ["created_at", "2020-05-12 03:13:22.243863"], ["updated_at", "2020-05-12 03:13:22.243863"], ["gender", "Female"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Branden Purdy Jr."], ["weight", 8.23], ["dob", "2019-07-22"], ["img", "https://robohash.org/temporamagnamdoloremque.png?size=300x300&set=set1"], ["likes", 100], ["created_at", "2020-05-12 03:13:22.247355"], ["updated_at", "2020-05-12 03:13:22.247355"], ["gender", "Male"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Jessie Robel"], ["weight", 6.6], ["dob", "2020-02-15"], ["img", "https://robohash.org/aliquidinet.png?size=300x300&set=set1"], ["likes", 77], ["created_at", "2020-05-12 03:13:22.250967"], ["updated_at", "2020-05-12 03:13:22.250967"], ["gender", "Male"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sue Johnston"], ["weight", 9.35], ["dob", "2020-01-31"], ["img", "https://robohash.org/enimremcorrupti.png?size=300x300&set=set1"], ["likes", 70], ["created_at", "2020-05-12 03:13:22.254577"], ["updated_at", "2020-05-12 03:13:22.254577"], ["gender", "Male"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Michele Stracke"], ["weight", 9.36], ["dob", "2019-12-08"], ["img", "https://robohash.org/reprehenderitdebitisqui.png?size=300x300&set=set1"], ["likes", 7], ["created_at", "2020-05-12 03:13:22.258011"], ["updated_at", "2020-05-12 03:13:22.258011"], ["gender", "Male"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allene Cartwright Jr."], ["weight", 5.94], ["dob", "2019-12-05"], ["img", "https://robohash.org/maioresconsequaturofficia.png?size=300x300&set=set1"], ["likes", 48], ["created_at", "2020-05-12 03:13:22.261661"], ["updated_at", "2020-05-12 03:13:22.261661"], ["gender", "Male"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Juliet Luettgen"], ["weight", 7.44], ["dob", "2020-05-01"], ["img", "https://robohash.org/illumnihilmagni.png?size=300x300&set=set1"], ["likes", 58], ["created_at", "2020-05-12 03:13:22.265304"], ["updated_at", "2020-05-12 03:13:22.265304"], ["gender", "Female"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Enrique Parker"], ["weight", 8.31], ["dob", "2019-08-30"], ["img", "https://robohash.org/odioveritatisdebitis.png?size=300x300&set=set1"], ["likes", 81], ["created_at", "2020-05-12 03:13:22.268547"], ["updated_at", "2020-05-12 03:13:22.268547"], ["gender", "Male"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Tad Ferry"], ["weight", 8.14], ["dob", "2020-02-20"], ["img", "https://robohash.org/quisquamevenietnon.png?size=300x300&set=set1"], ["likes", 49], ["created_at", "2020-05-12 03:13:22.272823"], ["updated_at", "2020-05-12 03:13:22.272823"], ["gender", "Female"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Rosina Miller"], ["weight", 8.49], ["dob", "2019-12-09"], ["img", "https://robohash.org/eumsapienteomnis.png?size=300x300&set=set1"], ["likes", 11], ["created_at", "2020-05-12 03:13:22.276582"], ["updated_at", "2020-05-12 03:13:22.276582"], ["gender", "Male"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Eleanora Kling"], ["weight", 8.64], ["dob", "2019-09-12"], ["img", "https://robohash.org/ipsamvoluptatemullam.png?size=300x300&set=set1"], ["likes", 90], ["created_at", "2020-05-12 03:13:22.283208"], ["updated_at", "2020-05-12 03:13:22.283208"], ["gender", "Female"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Willetta Waelchi"], ["weight", 8.25], ["dob", "2020-01-14"], ["img", "https://robohash.org/inventorevoluptatesiure.png?size=300x300&set=set1"], ["likes", 38], ["created_at", "2020-05-12 03:13:22.286667"], ["updated_at", "2020-05-12 03:13:22.286667"], ["gender", "Male"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Juan Rodriguez"], ["weight", 7.37], ["dob", "2020-01-09"], ["img", "https://robohash.org/nameosimpedit.png?size=300x300&set=set1"], ["likes", 72], ["created_at", "2020-05-12 03:13:22.289906"], ["updated_at", "2020-05-12 03:13:22.289906"], ["gender", "Male"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Conception Carroll"], ["weight", 5.95], ["dob", "2019-11-13"], ["img", "https://robohash.org/etaccusantiumea.png?size=300x300&set=set1"], ["likes", 66], ["created_at", "2020-05-12 03:13:22.293186"], ["updated_at", "2020-05-12 03:13:22.293186"], ["gender", "Female"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allie Thiel"], ["weight", 6.38], ["dob", "2020-02-04"], ["img", "https://robohash.org/veroestamet.png?size=300x300&set=set1"], ["likes", 40], ["created_at", "2020-05-12 03:13:22.296253"], ["updated_at", "2020-05-12 03:13:22.296253"], ["gender", "Male"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.4ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vanita Marquardt"], ["weight", 8.38], ["dob", "2019-11-14"], ["img", "https://robohash.org/voluptatemeosconsectetur.png?size=300x300&set=set1"], ["likes", 60], ["created_at", "2020-05-12 03:13:22.299870"], ["updated_at", "2020-05-12 03:13:22.299870"], ["gender", "Female"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Irwin Mertz"], ["weight", 8.42], ["dob", "2020-04-06"], ["img", "https://robohash.org/laboriosamsapientesed.png?size=300x300&set=set1"], ["likes", 80], ["created_at", "2020-05-12 03:13:22.313702"], ["updated_at", "2020-05-12 03:13:22.313702"], ["gender", "Female"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBaby Create (0.3ms)[0m  [1m[32mINSERT INTO "babies" ("name", "weight", "dob", "img", "likes", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Benton Gusikowski"], ["weight", 6.41], ["dob", "2019-12-11"], ["img", "https://robohash.org/repudiandaeblanditiisconsectetur.png?size=300x300&set=set1"], ["likes", 80], ["created_at", "2020-05-12 03:13:22.317192"], ["updated_at", "2020-05-12 03:13:22.317192"], ["gender", "Male"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBaby Load (0.2ms)[0m  [1m[34mSELECT "babies".* FROM "babies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBaby Load (0.2ms)[0m  [1m[34mSELECT "babies".* FROM "babies"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBaby Load (0.2ms)[0m  [1m[34mSELECT "babies".* FROM "babies" LIMIT ?[0m  [["LIMIT", 11]]
